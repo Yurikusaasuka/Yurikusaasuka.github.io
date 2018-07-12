@@ -5,6 +5,7 @@
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Knewave" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="index.css">
     </head>
@@ -15,10 +16,17 @@
         <p>
             <img height="250px" src="images/2.jpg" align="left">
         </p>
-        <div id="Top" align="center">
-        <h1>SUSIE</h1>
-        <h2>Welcome To My Home page!</h2>
-        <h3 id="sign">Do not go gentle into that good night.</h3>
+        <div id="Top">
+            <div id="Menu1">
+                <p>About me</p>
+                <p>Gallery</p>
+                <p>Contant</p>
+             </div>
+             <div id="Title" >
+            <h1>SUSIE</h1>
+            <h2>Welcome To My Home page!</h2>
+            <h3 id="sign">Do not go gentle into that good night.</h3>
+            </div>
         </div>
         <div id="NAME">
             <p align="center">NAME</p>
@@ -40,15 +48,15 @@
         </div>
         <table id="animes">
             <tr>
-                <td><a href="https://www.bilibili.com/bangumi/media/md5906"><img height="500px" src="images/dr2.jpg" border="0"></td>
-                <td><a href="https://www.bilibili.com/bangumi/media/md7752"><img height="500px" src="images/sj.jpg" border="0"></td>
-                <td><a href="https://www.bilibili.com/bangumi/media/md184"><img height="500px" src="images/ngnl.jpg" border="0"></td>
-                <td><a href="https://www.bilibili.com/bangumi/media/md1656"><img height="500px" src="images/drrr.jpg" border="0"></td>
+                <td><a href="https://www.bilibili.com/bangumi/media/md5906"><img height="500px" src="images/dr2.jpg" border="0"><h1 class="movieTitle">Super Danganronpa 2.5</h1></td>
+                <td><a href="https://www.bilibili.com/bangumi/media/md7752"><img height="500px" src="images/sj.jpg" border="0"><h1 class="movieTitle">夜は短し歩けよ乙女</h1></td>
+                <td><a href="https://www.bilibili.com/bangumi/media/md184"><img height="500px" src="images/ngnl.jpg" border="0"><h1 class="movieTitle">No Game No Life</h1></td>
+                <td><a href="https://www.bilibili.com/bangumi/media/md1656"><img height="500px" src="images/drrr.jpg" border="0"><h1 class="movieTitle">Drrr</h1></td>
             </tr>
         </table>
         <table id="drama">
             <tr>
-                <td><a href="https://www.bilibili.com/bangumi/media/md85652/?spm_id_from=666.10.bangumi_detail.1"><img height="500px" src="images/un.jpg" border="0"></td>
+                <td><a href="https://www.bilibili.com/bangumi/media/md85652/?spm_id_from=666.10.bangumi_detail.1"><img height="500px" src="images/un.jpg" border="0"><h1 class="movieTitle">UNNATURAL</h1></td>
             </tr>
         </table>
 
@@ -57,33 +65,82 @@
         
         <div id="Body">
             <div id="right" align="right">
-            <p>About</p>
-            <p>Photos</p>
+            <p>Index</p>
+            <p>Gallery</p>
             <p>Contant</p>
             </div>
-        	<li><h3>Q1:Which school are you from and which teacher I like best?</h3>
-            A:I am from Jiangsu Liangfeng High School and my favourite teacher is my Maths teacher because I like Maths.</li>
-        	<li><h3>Q2:What would you do when I feel stressed?</h3>
-            A:I like watching animes or reading books when I feel stressed instead eating any food.In my opinion,eating too much will give me more stress.</li>
-        	<li><h3>Q3:Which kind of book do you like?</h3>
-            A:Liturature,especially about something terribly.I always like the style that most people do not like and I love beautiful artical.</li>
-        	<li><h3>Q4:Which animal do you like best?</h3>
-            A:Cat.I like their soft fur and lovely behaviour.I hope one day I can keep a cat but it seems that it will not realize before three years later.</li>
-            <img height="500px" src="images/cat.jpg">
-        	<li><h3>Q5:Which colour do you like best?</h3>
-            A:Pink.</li>
-        	<li><h3>Q6:Which writers do you like?</h3>
-            A:Akutagawa lyonosuki,a famous Japanese writer who was in the same time with Luxun.I also like Luxun very much.Also, I like another writer called priest.</li>
-            <img height="500px" src="images/luxun.jpg">
-        	<li><h3>Q7:Which musical instrument do you like?</h3>
-            A:Piano,althought I do not like hearing it.I think one who is playing piano is beautiful or handsome.</li>
-        	<li><h3>Q8:Which cities do you like?</h3>
-            A:Shanghai and Tokyo.I like a busy city with many interesting people and things.By the way,it more easy for me to by things I want in the two cities. </li>
-        	<li><h3>Q9:What kind of cloths do you like?</h3>
-            A:Lolita.</li>
-            <img height="500px" src="images/dream.jpg">
-        	<li><h3>Q10:What is your opinion about the world?</h3>
-            A:I am a materialist but I think that the world is also idealistic in some way.</li>
+            <div class = "col">
+                <div id="Q1" class="cell">
+                    <h2>Q1:Which school are you from and which teacher I like best?</h2>
+                     <p>A:I am from Jiangsu Liangfeng High School and my favourite teacher is my Maths teacher because I like Maths.</p>
+                </div>
+                <div id="Q7" class="cell">
+                <h2>Q7:Which musical instrument do you like?</h2>
+                <p>A:Piano,althought I do not like hearing it.I think one who is playing piano is beautiful or handsome.</p>
+                </div>
+                <img class="cell" src="images/deemo.jpeg">
+            </div>
+            <div class="col" >
+                 <div id="Q2" class="cell">
+                <h2>Q2:What would you do when I feel stressed?</h2>
+                <p> A:I like watching animes or reading books when I feel stressed instead eating any food.In my opinion,eating too much will give me more stress.</p>
+                </div>
+                <div id="Q5" class="cell">
+                <h2>Q5:Which colour do you like best?</h2>
+                <p>A:Pink.</p>
+                </div>
+                <div id="Q8" class="cell">
+                <h2>Q8:Which cities do you like?</h2>
+                <p>A:Shanghai and Tokyo.I like a busy city with many interesting people and things.By the way,it more easy for me to by things I want in the two cities.</p>
+                </div>
+                <img class="cell" src="images/dream.jpg">
+            </div >
+            <div class = "col">
+                <div id="Q3" class="cell">
+                <h2>Q3:Which kind of book do you like?</h2>
+                <p>A:Liturature,especially about something terribly.I always like the style that most people do not like and I love beautiful artical.</p>
+                </div>
+                <div id="Q6" class="cell">
+                <h2>Q6:Which writers do you like?</h2>
+                <p>A:Akutagawa lyonosuki,a famous Japanese writer who was in the same time with Luxun.I also like Luxun very much.Also, I like another writer called priest.</p>
+                </div>
+                <img class="cell" src="images/luxun.jpg">
+                <div id="Q9" class="cell">
+                <h2>Q9:What kind of cloths do you like?</h2>
+                <p>A:Lolita.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div id="Q4" class="cell">
+                <h2>Q4:Which animal do you like best?</h2>
+                <p>A:Cat.I like their soft fur and lovely behaviour.I hope one day I can keep a cat but it seems that it will not realize before three years later.</p>
+                </div>
+                <img id = "cat" class="cell" src="images/cat.jpg">
+                <div id="Q10" class="cell">
+                <h2>Q10:What is your opinion about the world?</h2>
+                <p> A:I am a materialist but I think that the world is also idealistic in some way.</p>
+                </div>
+                </div>
+
+
+
+            
+           
+          
+            
+            
+            
+            
+           
+            
+           
+
+
+        	
+        	
+        
+            
+            
         </div>
     </body>
 </html>

@@ -4,7 +4,7 @@ h1{
 }
 
 h2{
-	color: #93d5d7;
+	color: #eea2a4;
 }
 
 #sign{
@@ -16,13 +16,24 @@ h2{
 #Top{
 	background-color: #f8df72;
 	height: 250px;
-	font-size:150%;
+	font-size:130%;
 }
 
 #Top:hover{
 	background-color: #fcc307;
 	transition: background-color 1s;
 	height: 250px;
+}
+
+.movieTitle{
+	bottom: 0;
+	position: absolute;
+    color: transparent;
+}
+
+.movieTitle:hover{
+	color: black;
+	background-color: white;
 }
 
 #Body{
@@ -106,3 +117,78 @@ body{
 	float: left;
 	clear: left;
 }
+
+
+.col{
+	color: #f1c7cd;
+	margin: 1%;
+    width: 20%;
+    /*padding:20px;*/
+    float: left;
+    position: relative;
+    font-size: 110%;
+}
+
+.cell{
+	width:95%;
+}
+#Q1{
+	background-color: #dd6969;
+}
+
+#Q2{
+	background-color: #f58569;
+}
+
+#Q3{
+    background-color: #f1b532;	
+}
+
+#Q4{
+    background-color: #5dbe8a;
+}
+
+#Q5{
+    background-color: #12aa9c;
+}
+
+#Q6{
+    background-color: #93d5d7;
+}
+
+
+#Q7{
+    background-color: #c8adc4;
+}
+
+#Q8{
+    background-color: #aa6a4c;
+}
+
+#Q9{
+    background-color: #b7a091;
+}
+
+#Q10{
+    background-color: #f2e6ce;
+}
+
+
+
+
+
+
+
+
+#Menu1{
+	color: #f8df72;
+	margin: 30px;
+	float:left;
+	font-family: 'Oswald', sans-serif;
+
+}
+
+#Title{
+	float:left;
+	margin-left: 100px;
+}	
