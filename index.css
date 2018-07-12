@@ -1,0 +1,108 @@
+h1{
+	color: #f1c4cd;
+    font-family: 'Knewave', cursive;
+}
+
+h2{
+	color: #93d5d7;
+}
+
+#sign{
+	color:#4c1f24;
+	font-family: 'Indie Flower', cursive;
+
+}
+
+#Top{
+	background-color: #f8df72;
+	height: 250px;
+	font-size:150%;
+}
+
+#Top:hover{
+	background-color: #fcc307;
+	transition: background-color 1s;
+	height: 250px;
+}
+
+#Body{
+	
+	position: relative;
+	float: left;
+	clear: left;
+}
+
+body{
+	margin: 0;
+	background-color: #f1c4cd;
+}
+
+#right{
+	background-color: #f1c4cd;
+    color: #f1c4cd;
+}
+
+#right:hover{
+	background-color: #b89485;
+	transition: background-color 1s;
+}
+
+#AGE{
+	background-color:#8fb2c9 ;
+	color:#f1c4cd;
+	margin-left:10%;
+	width: 20%;
+	position: relative;
+	float: left;
+	font-family: 'Coda Caption', sans-serif;
+	font-size: 110%;
+
+}
+
+#NAME{
+	float:left;
+	background-color:#8fb2c9 ;
+	color: #f1c4cd;
+	margin-left:10%;
+	width: 20%;
+	position: relative;
+	font-family: 'Coda Caption', sans-serif;
+    font-size: 110%;
+}
+
+#HOMETOWN{
+	float:left;
+	background-color:#8fb2c9 ;
+	color: #f1c4cd;
+	margin-left:10%;
+	width: 20%;
+	position: relative;
+	font-family: 'Coda Caption', sans-serif;
+    font-size: 110%;
+}
+#music{
+	position: relative;
+	float: left;
+	clear: left;
+}
+
+#animes{
+	position: relative;
+	float: left;
+	clear: left;
+}
+
+#hobby{
+	position: relative;
+	float: center;
+	clear: left;
+	color: #2b1216;
+	background-color:#7a7374;
+	font-size: 120%;
+}
+
+#drama{
+    position: relative;
+	float: left;
+	clear: left;
+}
