@@ -14,20 +14,15 @@ h2{
 }
 
 #Top{
-	background-color: #ef9a5d;
+	background-color:#b4abab;
 	height: 250px;
 	font-size:130%;
+	cursor: pointer;
 }
 
 #Top:hover{
-	background-color: #fcc307;
 	transition: background-color 1s;
-	height: 250px;
-}
-
-#Menu1,a{
- 	background-color: #ef9a5d;
- 	color:red;
+	background-color: #6c6565;
 }
 
 .movieTitle{
@@ -39,6 +34,16 @@ h2{
 .movieTitle:hover{
 	color: black;
 	background-color: white;
+}
+
+.small{
+	color: #f1c4cd;
+	background-color:#573700;
+	float: right;
+	right: -10px;
+	font-size:300%;
+    font-family: 'Satisfy', cursive;
+    clear: both;
 }
 
 #Body{
@@ -57,11 +62,13 @@ body{
 	background-color: #f1c4cd;
     color: #f1c4cd;
     clear: both;
+    font-size: 130%
 }
 
 #right:hover{
 	background-color: #b89485;
 	transition: background-color 1s;
+	font-size: 130%
 }
 
 #AGE{
@@ -76,6 +83,23 @@ body{
 
 }
 
+.age {
+	clear: both;
+	top: -10px;
+	position: absolute;
+    color: transparent;
+    font-size: 150%;
+}
+
+.age:hover{
+	top: -10px;
+	color:#f1c4cd;
+	background-color: #8fb2c9;
+	font-size: 150%;
+	font-family: 'Coda Caption', sans-serif;
+	width: 100%
+}
+
 #NAME{
 	float:left;
 	background-color:#8fb2c9 ;
@@ -85,6 +109,23 @@ body{
 	position: relative;
 	font-family: 'Coda Caption', sans-serif;
     font-size: 110%;
+}
+
+.name {
+	clear: both;
+	top: -10px;
+	position: absolute;
+    color: transparent;
+    font-size: 150%;
+}
+
+.name:hover{
+	top: -10px;
+	color:#f1c4cd;
+	background-color: #8fb2c9;
+	font-size: 150%;
+	font-family: 'Coda Caption', sans-serif;
+	width: 100%
 }
 
 #HOMETOWN{
@@ -97,6 +138,24 @@ body{
 	font-family: 'Coda Caption', sans-serif;
     font-size: 110%;
 }
+
+.hometown{
+	clear: both;
+	top: -10px;
+	position: absolute;
+    color: transparent;
+    font-size: 150%;
+}
+
+.hometown:hover{
+	top: -10px;
+	color:#f1c4cd;
+	background-color: #8fb2c9;
+	font-size: 150%;
+	font-family: 'Coda Caption', sans-serif;
+	width: 100%
+}
+
 #music{
 	position: relative;
 	float: left;
@@ -114,7 +173,7 @@ body{
 	float: center;
 	clear: left;
 	color: #2b1216;
-	background-color:#7a7374;
+	background-color:#b4abab;
 	font-size: 120%;
 }
 
@@ -124,6 +183,11 @@ body{
 	clear: left;
 }
 
+#book{
+	position: relative;
+	float: left;
+	clear: left;
+}
 
 .col{
 	color: #f1c7cd;
@@ -140,6 +204,8 @@ body{
 }
 #Q1{
 	background-color: #dd6969;
+ 	cursor: pointer;
+
 }
 
 #Q1:hover{
@@ -149,6 +215,7 @@ body{
 
 #Q2{
 	background-color: #f58569;
+	cursor: pointer;
 }
 
 #Q2:hover{
@@ -158,6 +225,7 @@ body{
 
 #Q3{
     background-color: #f1b532;	
+    cursor: pointer;
 }
 
 #Q3:hover{
@@ -167,6 +235,7 @@ body{
 
 #Q4{
     background-color: #5dbe8a;
+    cursor: pointer;
 }
 
 #Q4:hover{
@@ -176,6 +245,7 @@ body{
 
 #Q5{
     background-color: #12aa9c;
+    cursor: pointer;
 }
 
 #Q5:hover{
@@ -185,6 +255,7 @@ body{
 
 #Q6{
     background-color: #93d5d7;
+    cursor: pointer;
 }
 
 #Q6:hover{
@@ -194,6 +265,7 @@ body{
 
 #Q7{
     background-color: #c8adc4;
+    cursor: pointer;
 }
 
 #Q7:hover{
@@ -203,6 +275,7 @@ body{
 
 #Q8{
     background-color: #aa6a4c;
+    cursor: pointer;
 }
 
 #Q8:hover{
@@ -212,6 +285,7 @@ body{
 
 #Q9{
     background-color: #b7a091;
+    cursor: pointer;
 }
 
 #Q9:hover{
@@ -221,6 +295,7 @@ body{
 
 #Q10{
     background-color: #f2e6ce;
+    cursor: pointer;
 }
 
 #Q10:hover{
@@ -236,6 +311,7 @@ body{
 #about{
 	font-family: 'Coda Caption', sans-serif;
     font-size: 120%;
+    cursor: pointer;
 }
 
 #lit{
@@ -247,6 +323,18 @@ body{
 	background-color: #f1c4cd;
     color: #f1c4cd;
     clear: both;
+    cursor: pointer;
+    font-size: 120%;
+}
+
+.tabs{
+ 	background-color:transparent;
+}
+
+.tabs1{
+	background-color:#f1c4cd;
+	color: #a7535a; 
+	background-color:transparent;
 }
 
 #gallery:hover{
@@ -266,11 +354,15 @@ body{
 	background-color: #f1c4cd;
     color: #f1c4cd;
     clear: both;
+    font-size: 120%;
+    font-family: 'Coda Caption', sans-serif;
 }
 
 #contant:hover{
 	background-color: #b89485;
 	transition: background-color 1s;
+	cursor: pointer;
+	font-size: 120%
 }
 
 .address{
@@ -305,3 +397,4 @@ body{
 #ad3{
 	bottom: 50px;
 }
+
