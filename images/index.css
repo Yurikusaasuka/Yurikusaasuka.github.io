@@ -1,0 +1,400 @@
+h1{
+	color: #f1c4cd;
+ 	font-family: 'Russo One', sans-serif;
+}
+
+h2{
+	color: #a7535a;
+}
+
+#sign{
+	color:#4c1f24;
+	font-family: 'Indie Flower', cursive;
+
+}
+
+#Top{
+	background-color:#b4abab;
+	height: 250px;
+	font-size:130%;
+	cursor: pointer;
+}
+
+#Top:hover{
+	transition: background-color 1s;
+	background-color: #6c6565;
+}
+
+.movieTitle{
+	bottom: 0;
+	position: absolute;
+    color: transparent;
+}
+
+.movieTitle:hover{
+	color: black;
+	background-color: white;
+}
+
+.small{
+	color: #f1c4cd;
+	background-color:#573700;
+	float: right;
+	right: -10px;
+	font-size:300%;
+    font-family: 'Satisfy', cursive;
+    clear: both;
+}
+
+#Body{
+	
+	position: relative;
+	float: left;
+	clear: left;
+}
+
+body{
+	margin: 0;
+	background-color: #f1c4cd;
+}
+
+#right,a{
+	background-color: #f1c4cd;
+    color: #f1c4cd;
+    clear: both;
+    font-size: 130%
+}
+
+#right:hover{
+	background-color: #b89485;
+	transition: background-color 1s;
+	font-size: 130%
+}
+
+#AGE{
+	background-color:#8fb2c9 ;
+	color:#f1c4cd;
+	margin-left:10%;
+	width: 20%;
+	position: relative;
+	float: left;
+	font-family: 'Coda Caption', sans-serif;
+	font-size: 110%;
+
+}
+
+.age {
+	clear: both;
+	top: -10px;
+	position: absolute;
+    color: transparent;
+    font-size: 150%;
+}
+
+.age:hover{
+	top: -10px;
+	color:#f1c4cd;
+	background-color: #8fb2c9;
+	font-size: 150%;
+	font-family: 'Coda Caption', sans-serif;
+	width: 100%
+}
+
+#NAME{
+	float:left;
+	background-color:#8fb2c9 ;
+	color: #f1c4cd;
+	margin-left:10%;
+	width: 20%;
+	position: relative;
+	font-family: 'Coda Caption', sans-serif;
+    font-size: 110%;
+}
+
+.name {
+	clear: both;
+	top: -10px;
+	position: absolute;
+    color: transparent;
+    font-size: 150%;
+}
+
+.name:hover{
+	top: -10px;
+	color:#f1c4cd;
+	background-color: #8fb2c9;
+	font-size: 150%;
+	font-family: 'Coda Caption', sans-serif;
+	width: 100%
+}
+
+#HOMETOWN{
+	float:left;
+	background-color:#8fb2c9 ;
+	color: #f1c4cd;
+	margin-left:10%;
+	width: 20%;
+	position: relative;
+	font-family: 'Coda Caption', sans-serif;
+    font-size: 110%;
+}
+
+.hometown{
+	clear: both;
+	top: -10px;
+	position: absolute;
+    color: transparent;
+    font-size: 150%;
+}
+
+.hometown:hover{
+	top: -10px;
+	color:#f1c4cd;
+	background-color: #8fb2c9;
+	font-size: 150%;
+	font-family: 'Coda Caption', sans-serif;
+	width: 100%
+}
+
+#music{
+	position: relative;
+	float: left;
+	clear: left;
+}
+
+#animes{
+	position: relative;
+	float: left;
+	clear: left;
+}
+
+#hobby{
+	position: relative;
+	float: center;
+	clear: left;
+	color: #2b1216;
+	background-color:#b4abab;
+	font-size: 120%;
+}
+
+#drama{
+    position: relative;
+	float: left;
+	clear: left;
+}
+
+#book{
+	position: relative;
+	float: left;
+	clear: left;
+}
+
+.col{
+	color: #f1c7cd;
+	margin: 1%;
+    width: 20%;
+    /*padding:20px;*/
+    float: left;
+    position: relative;
+    font-size: 110%;
+}
+
+.cell{
+	width:95%;
+}
+#Q1{
+	background-color: #dd6969;
+ 	cursor: pointer;
+
+}
+
+#Q1:hover{
+	background-color: black;
+	transition: background-color 1s;
+}
+
+#Q2{
+	background-color: #f58569;
+	cursor: pointer;
+}
+
+#Q2:hover{
+	background-color: black;
+	transition: background-color 1s;
+}
+
+#Q3{
+    background-color: #f1b532;	
+    cursor: pointer;
+}
+
+#Q3:hover{
+	background-color: black;
+	transition: background-color 1s;
+}
+
+#Q4{
+    background-color: #5dbe8a;
+    cursor: pointer;
+}
+
+#Q4:hover{
+	background-color: black;
+	transition: background-color 1s;
+}
+
+#Q5{
+    background-color: #12aa9c;
+    cursor: pointer;
+}
+
+#Q5:hover{
+	background-color: black;
+	transition: background-color 1s;
+}
+
+#Q6{
+    background-color: #93d5d7;
+    cursor: pointer;
+}
+
+#Q6:hover{
+	background-color: black;
+	transition: background-color 1s;
+}
+
+#Q7{
+    background-color: #c8adc4;
+    cursor: pointer;
+}
+
+#Q7:hover{
+	background-color: black;
+	transition: background-color 1s;
+}
+
+#Q8{
+    background-color: #aa6a4c;
+    cursor: pointer;
+}
+
+#Q8:hover{
+	background-color: black;
+	transition: background-color 1s;
+}
+
+#Q9{
+    background-color: #b7a091;
+    cursor: pointer;
+}
+
+#Q9:hover{
+	background-color: black;
+	transition: background-color 1s;
+}
+
+#Q10{
+    background-color: #f2e6ce;
+    cursor: pointer;
+}
+
+#Q10:hover{
+	background-color: black;
+	transition: background-color 1s;
+}
+
+
+
+
+
+
+#about{
+	font-family: 'Coda Caption', sans-serif;
+    font-size: 120%;
+    cursor: pointer;
+}
+
+#lit{
+	font-family: 'Coda Caption', sans-serif;
+    font-size: 120%;
+}
+
+#gallery,a{
+	background-color: #f1c4cd;
+    color: #f1c4cd;
+    clear: both;
+    cursor: pointer;
+    font-size: 120%;
+}
+
+.tabs{
+ 	background-color:transparent;
+}
+
+.tabs1{
+	background-color:#f1c4cd;
+	color: #a7535a; 
+	background-color:transparent;
+}
+
+#gallery:hover{
+	background-color: #b89485;
+	transition: background-color 1s;
+}
+
+.photo{
+	background-color: brown;
+    color: black;
+    clear: both;
+    font-family: 'Permanent Marker', cursive;
+
+}
+
+#contant,a{
+	background-color: #f1c4cd;
+    color: #f1c4cd;
+    clear: both;
+    font-size: 120%;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+#contant:hover{
+	background-color: #b89485;
+	transition: background-color 1s;
+	cursor: pointer;
+	font-size: 120%
+}
+
+.address{
+	clear: both;
+	color: brown;
+	font-size: 200%;
+	font-family: 'Permanent Marker', cursive;
+}
+
+.ad{
+	clear: both;
+	bottom: -10px;
+	position: absolute;
+    color: transparent;
+    font-size: 150%;
+}
+
+.ad:hover{
+	color: black;
+	background-color: #f1c4cd;
+	font-size: 150%;
+}
+
+#ad1{
+	bottom: 200px;
+}
+
+#ad2{
+	bottom: 120px
+}
+
+#ad3{
+	bottom: 50px;
+}
+
