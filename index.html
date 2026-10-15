@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fujia Wu</title>
+<meta name="description" content="Fujia Wu, master's student in Health Data Science at Juntendo University, working on neural spike sequence modeling.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg stroke='%23B02A64' stroke-width='3.2' stroke-linecap='round'%3E%3Cline x1='9' y1='10' x2='9' y2='22'/%3E%3Cline x1='16' y1='5' x2='16' y2='27'/%3E%3Cline x1='23' y1='12' x2='23' y2='20'/%3E%3C/g%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yurikusaasuka.github.io/">
+<meta property="og:title" content="Fujia Wu — Health Data Science, Juntendo University">
+<meta property="og:description" content="Master's student in Health Data Science at Juntendo University, working on Transformer-based modeling of neural spike sequences in the Himeno-Sun Lab.">
+<meta property="og:image" content="https://yurikusaasuka.github.io/images/fujia.png">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1F3F7; --surface:#FFFFFF; --ink:#172033; --muted:#5A6478;
+  --rule:#D6DBE4; --accent:#B02A64; --accent-soft:#F7E4ED;
+  --serif:"Spectral", Georgia, "Times New Roman", serif;
+  --sans:"Public Sans", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans", sans-serif;
+  --nav-h:56px;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F131B; --surface:#161C27; --ink:#E6E9F0; --muted:#98A1B3;
+    --rule:#2A3242; --accent:#F0679F; --accent-soft:#3A1C2A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F131B; --surface:#161C27; --ink:#E6E9F0; --muted:#98A1B3;
+  --rule:#2A3242; --accent:#F0679F; --accent-soft:#3A1C2A; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--nav-h) + 20px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit;text-decoration-color:color-mix(in srgb, var(--accent) 55%, transparent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+img,canvas,svg{max-width:100%}
+
+/* ---------- Top navigation ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--rule)}
+.nav-inner{max-width:1120px;margin:0 auto;height:var(--nav-h);display:flex;align-items:center;gap:32px;padding:0 28px}
+.brand{font-family:var(--serif);font-size:1.2rem;font-weight:600;text-decoration:none;white-space:nowrap;letter-spacing:-.01em}
+.nav-links{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-size:.875rem;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:6px;white-space:nowrap}
+.nav-links a:hover{color:var(--ink);background:var(--surface)}
+.nav-links a.active{color:var(--accent)}
+
+/* ---------- Page shell ---------- */
+.shell{max-width:1120px;margin:0 auto;padding:48px 28px 96px;display:grid;grid-template-columns:240px minmax(0,1fr);gap:72px}
+
+/* ---------- Sidebar profile ---------- */
+.profile{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--nav-h) + 40px);align-self:start}
+.avatar{width:148px;height:148px;border-radius:50%;background:var(--surface);border:1px solid var(--rule);display:grid;place-items:center;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.profile h1{font-family:var(--serif);font-weight:500;font-size:2rem;line-height:1.1;margin:24px 0 8px;letter-spacing:-.015em}
+.profile .bio{color:var(--muted);font-size:.9375rem;line-height:1.5;margin:0 0 20px}
+.contact{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:10px;font-size:.9rem}
+.contact li{display:flex;align-items:center;gap:10px;min-width:0}
+.contact svg{flex:none;width:16px;height:16px;stroke:var(--muted);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.contact a,.contact span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:none}
+.contact a:hover{text-decoration:underline}
+.cv-btn{display:inline-flex;align-items:center;gap:8px;font-size:.875rem;font-weight:600;padding:9px 16px;border-radius:999px;border:1px solid var(--ink);text-decoration:none}
+.cv-btn:hover{background:var(--ink);color:var(--bg)}
+.interests{margin-top:32px;padding-top:20px;border-top:1px solid var(--rule)}
+.interests h2{font-family:var(--serif);font-size:1rem;font-weight:500;margin:0 0 10px}
+.interests ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:.875rem;color:var(--muted);line-height:1.45}
+
+/* ---------- Hero raster ---------- */
+.raster{margin:0 0 56px}
+.raster-frame{position:relative;background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:18px 18px 12px;overflow:hidden}
+.raster canvas{display:block;width:100%;height:200px;cursor:crosshair;touch-action:pan-y}
+.raster-axis{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted);margin-top:6px}
+.raster figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.8125rem;color:var(--muted);margin-top:10px}
+
+/* ---------- Sections ---------- */
+main section{margin-bottom:64px}
+main h2.sec{font-family:var(--serif);font-weight:500;font-size:1.75rem;letter-spacing:-.01em;line-height:1.2;margin:0 0 24px;display:flex;align-items:flex-end;gap:14px}
+main h2.sec::before{content:"";flex:none;width:14px;height:22px;margin-bottom:5px;
+  background:
+    linear-gradient(var(--accent),var(--accent)) 0 100%/2px 62% no-repeat,
+    linear-gradient(var(--accent),var(--accent)) 6px 100%/2px 100% no-repeat,
+    linear-gradient(var(--accent),var(--accent)) 12px 100%/2px 38% no-repeat}
+h3.sub{font-family:var(--serif);font-weight:500;font-size:1.2rem;margin:36px 0 14px}
+.prose{max-width:68ch;font-family:var(--serif);font-size:1.125rem;line-height:1.72}
+.prose p{margin:0 0 1em}
+.prose strong{font-weight:600}
+
+/* News */
+.news{list-style:none;margin:0;padding:0;max-width:68ch}
+.news li{display:grid;grid-template-columns:84px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.news li:first-child{border-top:1px solid var(--rule)}
+.news time{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.875rem;padding-top:2px}
+
+/* Publications */
+.pubs{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.pub{display:grid;grid-template-columns:84px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.pub-year{font-family:var(--serif);font-size:1.25rem;color:var(--muted);line-height:1.3}
+.pub-title{font-family:var(--serif);font-size:1.125rem;font-weight:500;line-height:1.4;margin:0 0 4px}
+.pub-authors{font-size:.9rem;color:var(--muted);margin:0 0 6px}
+.pub-authors strong{color:var(--ink);font-weight:600}
+.pub-venue{font-size:.875rem;margin:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pub-venue em{font-style:italic}
+.badge{font-size:.75rem;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.badge.quiet{background:transparent;border:1px solid var(--rule);color:var(--muted);font-weight:500}
+
+/* Experience timeline */
+.timeline{list-style:none;margin:0;padding:0 0 0 28px;position:relative;max-width:72ch}
+.timeline::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--rule)}
+.timeline > li{position:relative;padding-bottom:32px}
+.timeline > li:last-child{padding-bottom:0}
+.timeline > li::before{content:"";position:absolute;left:-27px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.timeline > li.past::before{border-color:var(--muted)}
+.when{font-size:.8125rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.where{font-family:var(--serif);font-size:1.15rem;font-weight:500;margin:2px 0 2px}
+.role{font-size:.95rem;margin:0 0 8px}
+.timeline ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:.925rem;display:grid;gap:4px}
+.timeline ul li::marker{color:var(--accent)}
+
+/* Projects */
+.projects{display:flex;flex-direction:column;gap:28px}
+.project{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px}
+.project:hover{border-color:color-mix(in srgb, var(--accent) 45%, var(--rule))}
+.project-thumb{width:calc(100% + 44px);margin:-22px -22px 0;border-radius:14px 14px 0 0;display:block;aspect-ratio:16/10;object-fit:cover}
+.project h3{font-family:var(--serif);font-weight:500;font-size:1.2rem;line-height:1.3;margin:0}
+.project .when{margin:-4px 0 0}
+.project p{margin:0;font-size:.925rem;color:var(--muted)}
+.project-role{color:var(--ink)}
+.project-role strong{font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.tags span{font-size:.75rem;padding:2px 9px;border-radius:999px;border:1px solid var(--rule);color:var(--muted)}
+.project-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+
+/* Projects: featured (first project, full width) */
+.project-featured{display:grid;grid-template-columns:5fr 6fr;gap:28px}
+.project-featured img{width:100%;height:100%;object-fit:cover;border-radius:14px;border:1px solid var(--rule);display:block}
+.project-featured-body{display:flex;flex-direction:column;gap:10px}
+
+/* Projects: paired cards side by side */
+.project-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+/* Service */
+.service{margin:0;padding:0;list-style:none;max-width:68ch}
+.service li{padding:12px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+
+footer{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:24px;font-size:.8125rem;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px){
+  .shell{grid-template-columns:1fr;gap:40px;padding-top:32px}
+  .profile{position:static;display:grid;grid-template-columns:96px 1fr;column-gap:20px;align-items:center}
+  .avatar{width:96px;height:96px;grid-row:span 2}
+  .profile h1{margin:0 0 4px;font-size:1.75rem}
+  .profile .bio{margin:0}
+  .contact,.cv-wrap,.interests{grid-column:1 / -1}
+  .contact{margin-top:20px}
+  .interests{margin-top:24px}
+  .brand{display:none}
+  .nav-links{margin-left:0}
+  .project-featured{grid-template-columns:1fr}
+  .project-featured img{height:auto;aspect-ratio:16/10}
+}
+@media (max-width: 640px){
+  .project-pair{grid-template-columns:1fr}
+}
+@media (max-width: 560px){
+  .shell{padding-left:20px;padding-right:20px}
+  .nav-inner{padding:0 12px}
+  .news li,.pub{grid-template-columns:1fr;gap:4px}
+  .raster canvas{height:160px}
+  .prose{font-size:1.0625rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="nav-inner">
+    <a class="brand" href="#about-me">Fujia Wu</a>
+    <div class="nav-links">
+      <a href="#about-me">About</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#service">Service</a>
+    </div>
+  </div>
+</nav>
+
+<div class="shell">
+
+  <!-- ===== Sidebar ===== -->
+  <aside class="profile" aria-label="Profile">
+    <div class="avatar">
+      <img src="images/fujia.png" alt="Fujia Wu" style="object-position:center 22%">
+    </div>
+    <h1>Fujia Wu</h1>
+    <p class="bio">Master's student in Health Data Science, Juntendo University</p>
+    <ul class="contact">
+      <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Tokyo, Japan</span></li>
+      <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:susiewu916@gmail.com">susiewu916@gmail.com</a></li>
+      <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:gds9525002@juntendo.ac.jp">gds9525002@juntendo.ac.jp</a></li>
+      <li><svg viewBox="0 0 24 24"><path d="M9 19c-4.5 1.4-4.5-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><a href="https://github.com/Yurikusaasuka">github.com/Yurikusaasuka</a></li>
+    </ul>
+    <div class="cv-wrap">
+      <!-- Put your CV at files/CV_FujiaWu.pdf in the repo -->
+      <a class="cv-btn" href="files/CV_FujiaWu.pdf">Download CV</a>
+    </div>
+    <div class="interests">
+      <h2>Research interests</h2>
+      <ul>
+        <li>Neural population dynamics and behavior</li>
+        <li>Cross-session modeling of neural activity</li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- ===== Main ===== -->
+  <main>
+
+    <section id="about-me">
+      <figure class="raster">
+        <div class="raster-frame">
+          <canvas id="raster" aria-label="Synthetic spike raster of 36 neurons firing in sequence"></canvas>
+          <div class="raster-axis" aria-hidden="true"><span>0 ms</span><span>time</span><span>2000 ms</span></div>
+        </div>
+        <figcaption>
+          <span>Synthetic spike raster · 36 neurons · 2 s</span>
+          <span>Hover to explore</span>
+        </figcaption>
+      </figure>
+
+      <h2 class="sec">About me</h2>
+      <div class="prose">
+        <p>I am a master's student in <a href="https://www.juntendo.ac.jp/academics/graduate/hds/">Health Data Science</a> at <strong>Juntendo University</strong>, working in the <a href="https://himeno-sun-lab.github.io/team/"><strong>Himeno-Sun Lab</strong></a> under the supervision of <strong>Prof. Ryutaro Himeno</strong> and <strong>Prof. Zhe Sun</strong> at Juntendo, and <strong>Dr. Chao Li</strong> at RIKEN AIP.</p>
+        <p>As part of the <strong>Brain/MINDS 2.0 Digital Brain Project</strong>, I adapt Transformer-based sequence models to rat neural recordings and ask how well what they learn carries over across trials, recording sessions and animals. I am interested in neural population dynamics and coding, and in computational models of cognition and behavior.</p>
+        <p>Before Juntendo, I received a BSc (Hons) in Information and Computing Science from Xi'an Jiaotong-Liverpool University, a dual degree with the University of Liverpool.</p>
+      </div>
+    </section>
+
+    <section id="news">
+      <h2 class="sec">News</h2>
+      <ul class="news">
+        <li><time datetime="2026-10">2026.10</time><span>Presented a poster on pretraining and parameter-efficient adaptation for rat neural dynamics at the <strong>3rd Digital Brain Workshop</strong> in Chiba.</span></li>
+        <li><time datetime="2026-07">2026.07</time><span>Our paper <strong>TensorSpike</strong> was accepted to the CoLoRAI Workshop at <strong>ICML 2026</strong>.</span></li>
+        <li><time datetime="2026-05">2026.05</time><span>Serving as a reviewer for the <strong>CoLoRAI Workshop at ICML 2026</strong>.</span></li>
+        <li><time datetime="2025-10">2025.10</time><span>Presented my first poster on Transformer models of rat neural activity at the <strong>2nd Digital Brain Workshop</strong> in Oita.</span></li>
+        <li><time datetime="2025-04">2025.04</time><span>Started my master's at Juntendo University and joined the Himeno-Sun Lab.</span></li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2 class="sec">Publications and presentations</h2>
+
+      <h3 class="sub">Papers</h3>
+      <ol class="pubs">
+        <li class="pub">
+          <div class="pub-year">In prep.</div>
+          <div>
+            <p class="pub-title">AI meets Neural Spike Sequence Modeling</p>
+            <p class="pub-authors"><strong>Fujia Wu</strong>, Yunyu Huang, Xiyang Sun, Zhe Sun, Xiaowei Gu, Chao Li</p>
+            <p class="pub-venue"><span class="badge quiet">Manuscript in preparation</span></p>
+          </div>
+        </li>
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div>
+            <p class="pub-title">TensorSpike: Tractable Probabilistic Modeling for Neural Spike Trains with Tensor Networks</p>
+            <p class="pub-authors">Yunyu Huang, <strong>Fujia Wu</strong>, Dairui Chen, Xiaowei Gu, Zhe Sun, Chao Li</p>
+            <p class="pub-venue"><em>CoLoRAI Workshop at ICML 2026</em><span class="badge">Poster</span></p>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="sub">Presentations</h3>
+      <ol class="pubs">
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div>
+            <p class="pub-title">Pretraining and Parameter-Efficient Adaptation for Rat Neural Dynamics Modeling</p>
+            <p class="pub-authors"><strong>Fujia Wu</strong>, Zhe Sun, Xiaowei Gu, Chao Li</p>
+            <p class="pub-venue"><em>3rd Digital Brain Workshop, Chiba, Japan</em><span class="badge">Poster</span></p>
+          </div>
+        </li>
+        <li class="pub">
+          <div class="pub-year">2025</div>
+          <div>
+            <p class="pub-title">Modeling Rat Neural Activity with Transformers Across Single-Neuron and Multi-Neuron Scales</p>
+            <p class="pub-authors"><strong>Fujia Wu</strong>, Zhe Sun, Xiaowei Gu, Chao Li</p>
+            <p class="pub-venue"><em>2nd Digital Brain Workshop, Oita, Japan</em><span class="badge">Poster</span></p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="experience">
+      <h2 class="sec">Education</h2>
+      <ol class="timeline">
+        <li>
+          <div class="when">Apr 2025 – Mar 2027 (expected)</div>
+          <div class="where">Juntendo University, Tokyo</div>
+          <p class="role">MSc in Health Data Science, Himeno-Sun Lab. Research on the Brain/MINDS 2.0 Digital Brain Project.</p>
+        </li>
+        <li class="past">
+          <div class="when">Sep 2020 – Jun 2024</div>
+          <div class="where">Xi'an Jiaotong-Liverpool University, Suzhou</div>
+          <p class="role">BSc (Hons) in Information and Computing Science, dual degree with the University of Liverpool.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="projects">
+      <h2 class="sec">Projects</h2>
+      <div class="projects">
+
+        <!-- Featured project: screenshot left, text right on desktop; stacks below 900px -->
+        <article class="project project-featured">
+          <img src="images/brain.png" alt="Adopt a Brain gameplay: pixel-art brain maps, simulated EEG and an everyday event with three choices">
+          <div class="project-featured-body">
+            <h3>Adopt a Brain</h3>
+            <div class="when">Personal project, 2026, public beta</div>
+            <p>A browser game where you adopt a pixel-art brain and make everyday decisions for it. Your choices change its simulated brain activity and gradually shape one of nine playful brain types.</p>
+            <p class="project-role"><strong>Role:</strong> I vibe-coded the project with AI assistance throughout, from game design and bilingual writing to web development.</p>
+            <div class="tags"><span>JavaScript</span><span>Canvas</span><span>Game design</span><span>Neuroscience</span><span>Chinese/English</span></div>
+            <div class="project-links">
+              <a class="cv-btn" href="https://yurikusaasuka.github.io/adopt-a-brain/">Play online</a>
+              <a class="cv-btn" href="https://github.com/Yurikusaasuka/adopt-a-brain">Source on GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Two plain cards side by side; stacks below 640px -->
+        <div class="project-pair">
+          <article class="project">
+            <h3>A VR fitness game about fishing</h3>
+            <div class="when">Team project, Unity, 20XX</div>
+            <p>A VR game where you play as a cat catching fish through physical exercise in a world without humans.</p>
+            <p class="project-role"><strong>Role:</strong> I came up with the concept, designed the gameplay, wrote most of the Unity prototype, and led the final team presentation.</p>
+            <div class="tags"><span>Unity</span><span>VR</span><span>Game design</span><span>Team lead</span></div>
+          </article>
+
+          <article class="project">
+            <h3>NLP for production safety</h3>
+            <div class="when">Undergraduate dissertation, 2023–2024</div>
+            <p>An undergraduate project exploring the use of BERT to classify risk levels and extract information from industrial safety records.</p>
+            <p class="project-role"><strong>Role:</strong> I experimented with several language models using limited, inconsistently formatted data. The project remained a proof-of-concept prototype rather than a finished application.</p>
+            <div class="tags"><span>BERT</span><span>NLP</span><span>PyTorch</span></div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="service">
+      <h2 class="sec">Academic service</h2>
+      <ul class="service">
+        <li><strong>Reviewer</strong>, CoLoRAI Workshop at ICML 2026</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© 2026 Fujia Wu</span>
+    <span>Last updated October 2026</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  /* ---------- Spike raster ---------- */
+  const canvas = document.getElementById('raster');
+  const ctx = canvas.getContext('2d');
+  const N = 36, BINS = 400;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // seeded RNG so the raster looks the same on every visit
+  let s = 916;
+  const rand = () => (s = (s * 16807) % 2147483647) / 2147483647;
+
+  // each neuron fires in one pass of a travelling sequence (jittered center and width,
+  // per-spike rate jitter) plus a low, uncorrelated background rate so the raster
+  // doesn't read as a clean repeating pattern
+  const spikes = [];
+  for (let i = 0; i < N; i++) {
+    const center = (i / N) * BINS + (rand() - .5) * 18;
+    const width = 22 + rand() * 14;
+    const gain = .5 + rand() * .45;
+    const row = [];
+    for (let t = 0; t < BINS; t++) {
+      const d = t - center;
+      const tuned = Math.exp(-(d * d) / (2 * width * width));
+      const jitter = 1 + (rand() - .5) * .3;
+      const p = .0025 + gain * .5 * tuned * jitter;
+      if (rand() < p) row.push(t);
+    }
+    spikes.push(row);
+  }
+
+  let focus = 13, progress = reduce ? 1 : 0;
+
+  function color(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+
+  function draw(){
+    const dpr = window.devicePixelRatio || 1;
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    if (canvas.width !== Math.round(w*dpr) || canvas.height !== Math.round(h*dpr)) {
+      canvas.width = Math.round(w*dpr); canvas.height = Math.round(h*dpr);
+    }
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,w,h);
+    const ink = color('--ink'), accent = color('--accent'), rule = color('--rule');
+    const rowH = h / N, limit = progress * BINS;
+
+    // highlight band behind the focused neuron
+    ctx.fillStyle = rule;
+    ctx.globalAlpha = .55;
+    ctx.fillRect(0, focus*rowH, w, rowH);
+    ctx.globalAlpha = 1;
+
+    for (let i = 0; i < N; i++) {
+      const on = i === focus;
+      ctx.strokeStyle = on ? accent : ink;
+      ctx.globalAlpha = on ? 1 : .55;
+      ctx.lineWidth = on ? 1.8 : 1.2;
+      ctx.beginPath();
+      const y0 = i*rowH + rowH*.15, y1 = i*rowH + rowH*.85;
+      for (const t of spikes[i]) {
+        if (t > limit) break;
+        const x = Math.round((t / BINS) * w) + .5;
+        ctx.moveTo(x, y0); ctx.lineTo(x, y1);
+      }
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+
+    // sweep cursor during the load animation
+    if (progress < 1) {
+      const x = progress * w;
+      ctx.strokeStyle = accent; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke();
+    }
+  }
+
+  function sweep(start){
+    function step(now){
+      progress = Math.min(1, (now - start) / 1600);
+      draw();
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  canvas.addEventListener('pointermove', e => {
+    const r = canvas.getBoundingClientRect();
+    const i = Math.max(0, Math.min(N-1, Math.floor((e.clientY - r.top) / (r.height / N))));
+    if (i !== focus) { focus = i; draw(); }
+  });
+  window.addEventListener('resize', draw);
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+  new MutationObserver(draw).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
+
+  if (reduce) draw(); else sweep(performance.now());
+
+  /* ---------- Active section in nav ---------- */
+  const links = [...document.querySelectorAll('.nav-links a')];
+  const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        links.forEach(a => a.classList.remove('active'));
+        const a = map.get(en.target.id);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, {rootMargin:'-40% 0px -55% 0px'});
+  document.querySelectorAll('main section').forEach(sec => io.observe(sec));
+})();
+</script>
+</body>
+</html>
